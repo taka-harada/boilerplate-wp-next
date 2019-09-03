@@ -1,5 +1,7 @@
 const withSass = require('@zeit/next-sass')
 const withCSS = require('@zeit/next-css')
+const withImages = require('next-images')
+const withFonts = require('next-fonts')
 
 // const resourcesLoader = {
 //   loader: "sass-resources-loader",
@@ -21,7 +23,11 @@ const resourcesLoader = [
   // "./styles/foundation/_show-setting.scss"
 ];
 
-module.exports = withCSS(withSass({
+module.exports = withImages(withCSS(withSass(withFonts(({
+
+  cssLoaderOptions: {
+    url: false
+  },
 
   webpack (config, options) {
     // config.module.rules.push({
@@ -44,4 +50,5 @@ module.exports = withCSS(withSass({
 
     return config;
   }
-}));
+
+})))));

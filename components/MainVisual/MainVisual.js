@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 
-import {MainAreaImage} from '../static/MainAreaImage'
+import {MainVisualImage} from '../../static/MainVisualImage'
+import './MainVisual.scss'
 
-class MainArea extends Component {
+class MainVisual extends Component {
   render() {
     return (
       <section className="p-main-area">
@@ -12,12 +13,12 @@ class MainArea extends Component {
           </ul>
           <div className="p-slider-area__title">
             <h1>
-              <MainAreaImage fname="main_logo.png" alt="boilerplate media" class="pc" />
-              <MainAreaImage fname="main_logo-sp.png" alt="boilerplate media" class="sp" />
+              <MainVisualImage fname="main_logo.png" alt="boilerplate media" class="pc" />
+              <MainVisualImage fname="main_logo-sp.png" alt="boilerplate media" class="sp" />
             </h1>
           </div>
           <div className="p-slider-area__arrow">
-            <span><MainAreaImage fname="main_arw.png" alt="scroll" /></span>
+            <span><MainVisualImage fname="main_arw.png" alt="scroll" /></span>
           </div>
         </div>
       </section>
@@ -25,4 +26,4 @@ class MainArea extends Component {
   }
 }
 
-export default MainArea;
+export default MainVisual;

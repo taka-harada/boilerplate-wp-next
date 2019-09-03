@@ -14,7 +14,7 @@ class SearchBtn extends Component {
   render() {
     return (
       <div className="l-header__ui">
-        <div id="nav-search" class={this.props.flg ? "" : "is-open"} onClick={this.props.onClickSearch}><a href="#" aria-label="nav-search"><span></span></a></div>
+        <div id="nav-search" className={this.props.flg ? "" : "is-open"} onClick={this.props.onClickSearch}><a href="#" aria-label="nav-search"><span></span></a></div>
       </div>
     )
   }

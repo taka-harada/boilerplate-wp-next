@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-export class MainAreaImage extends Component {
+export class MainVisualImage extends Component {
   constructor(props){
     super(props);
     this.fname = "./static/main/" + props.fname;

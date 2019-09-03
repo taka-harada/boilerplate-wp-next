@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
-import MainArea from '../components/MainArea'
+import MainVisual from '../components/MainVisual/MainVisual'
 import ContentArea from '../components/ContentArea'
 // import TopContent from '../components/Project/Top/TopContent'
 // import Slider from '../components/Project/Top/Slider'
@@ -8,7 +8,7 @@ import ContentArea from '../components/ContentArea'
 
 export default () => (
   <Layout title="Top Page">
-    <MainArea />
+    <MainVisual />
     <ContentArea />
     <Link href="./other">
       <button>Go to Other &gt;&gt;</button>
