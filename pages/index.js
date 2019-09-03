@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import MainVisual from '../components/MainVisual/MainVisual'
-import ContentArea from '../components/ContentArea'
+import ContentArea from '../components/ContentArea/ContentArea'
 // import TopContent from '../components/Project/Top/TopContent'
 // import Slider from '../components/Project/Top/Slider'
 // import '../components/Project/Top/Top.scss'

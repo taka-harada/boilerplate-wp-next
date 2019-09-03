@@ -1,0 +1,143 @@
+@charset "utf-8";
+@import '../../styles/global.scss';
+
+.c-bloc-title {
+  text-align: center;
+
+  dt.jp,
+  dt.en {
+    position: relative;
+    z-index: 0;
+
+    color: $titleTxtColor;
+    font-size: 27px;
+    line-height: 30px;
+    font-weight: bold;
+    letter-spacing: .08em;
+    padding-bottom: 19px;
+    margin-bottom: 13px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 0;
+      width: 144px;
+      height: 2px;
+      margin: 0 auto;
+      background-color: $titleBorderColor;
+    }
+  }
+
+  dt.en {
+    font-size: 22px;
+    font-family: 'Zilla Slab', serif;
+    color: $titleSubTxtColor;
+    margin-top: -5px;
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+  }
+
+  dd.en {
+    font-family: 'Zilla Slab', serif;
+    color: $titleSubTxtColor;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: .08em;
+  }
+
+  dd.jp {
+    color: $titleSubTxtColor;
+    font-size: 27px;
+    // line-height: 1;
+    line-height: 1.7em;
+    font-weight: 600;
+    letter-spacing: .08em;
+  }
+}
+
+// .c-bloc-title + .p-archive__list {
+//   padding-top: 30px;
+// }
+
+@media screen and (max-width: 800px) {
+  .c-bloc-title {
+    dt.jp {
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .c-bloc-title {
+    dt.jp {
+      font-size: 24px;
+      line-height: 28px;
+
+      padding-bottom: 14px;
+      margin-bottom: 10px;
+
+      &:after {
+        width: 144px;
+        height: 2px;
+      }
+    }
+
+    dd.en {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    dd.jp {
+      font-size: 22px;
+      line-height: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .c-bloc-title {
+    dt.jp {
+      font-size: 23px;
+      line-height: 26px;
+      padding-bottom: 12px;
+      margin-bottom: 9px;
+
+      &:after {
+        width: 144px;
+        height: 2px;
+      }
+    }
+
+    dt.en {
+      font-size: 16px;
+      padding-bottom: 6px;
+      margin-top: -10px;
+    }
+
+    dd.en {
+      font-size: 18px;
+      line-height: 1;
+    }
+  }
+
+  // .c-bloc-title + .p-archive__list {
+  //   padding-top: 10px;
+
+  //   .c-card--archive-column {
+  //     .img-box {
+  //       a {
+  //         width: 148px;
+  //       }
+  //     }
+  //   }
+  // }
+}
+
+@media screen and (max-width: 320px) {
+  //
+}
