@@ -16,14 +16,14 @@ $categoryColor_blog: #bea659;
 */
 @mixin backGroundSetting_A {
   background-color: #fff;
-  background-image: url(../img/bg_whptn.png);
+  background-image: url(/static/bg/bg_whptn.png);
   background-repeat: repeat;
   background-position: left top;
 }
 
 @mixin backGroundSetting_B {
   background-color: #e4382f;
-  background-image: url(../img/bg_ptn.png);
+  background-image: url(/static/bg/bg_ptn.png);
   background-repeat: repeat;
   background-position: left top;
 
