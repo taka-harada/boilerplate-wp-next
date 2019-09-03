@@ -1,0 +1,296 @@
+@charset "utf-8";
+
+/* footer
+------------------------ */
+
+.l-footer {
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 0;
+  background-color: $footerBgColor;
+  padding-top: 48px;
+  padding-bottom: 50px;
+
+  img {
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+
+  &__logo {
+    margin-bottom: 27px;
+
+    a {
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+    }
+
+    .logo {
+      width: 324.5px;
+      margin: 0 auto;
+    }
+
+    p {
+      color: $footerTxtColor;
+      font-size: 15px;
+      line-height: 1;
+      font-weight: normal;
+      letter-spacing: .08em;
+      padding-top: 19px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 28px;
+
+    p {
+      text-align: center;
+      color: $footerTxtColor;
+      font-size: 13px;
+      line-height: 28px;
+      font-weight: normal;
+    }
+  }
+
+  &__link {
+    max-width: 290px;
+    // max-width: 270px;
+    margin: 0 auto 40px;
+    padding-top: 3px;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        a {
+          display: block;
+          width: 70px;
+          height: 70px;
+          background-image: url(../img/footer/social_icon.svg);
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          background-size: 70px 210px;
+        }
+      }
+
+      li.fb a {
+        background-position: 0 0;
+      }
+
+      li.tw a {
+        background-position: 0 -70px;
+      }
+
+      li.ln a {
+        background-position: 0 -140px;
+      }
+
+      li.ln {
+        display: block;
+      }
+    }
+  }
+
+  &__ci {
+    margin-bottom: 20px;
+
+    a {
+      display: block;
+      width: 113px;
+      margin: 0 auto;
+    }
+  }
+
+  address {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: $footerTxtColor;
+    font-size: 11px;
+    line-height: 16px;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .l-footer {
+    &__link {
+      li {
+        a {
+          opacity: 1;
+          transition: opacity .2s;
+
+          &:hover {
+            opacity: .7;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .l-footer {
+    padding-top: 46px;
+    padding-bottom: 50px;
+
+    &__logo {
+      margin-bottom: 25px;
+
+      .logo {
+        width: 295px;
+        margin: 0 auto;
+      }
+
+      p {
+        font-size: 14px;
+        padding-top: 27px;
+      }
+    }
+
+    &__description {
+      margin-bottom: 35px;
+
+      p {
+        text-align: center;
+        font-size: 13px;
+        line-height: 28px;
+      }
+    }
+
+    &__link {
+      max-width: 290px;
+      margin: 0 auto 40px;
+      padding-top: 0;
+    }
+
+    &__ci {
+      margin-bottom: 20px;
+
+      a {
+        width: 113px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .l-footer {
+    padding-top: 34px;
+    padding-bottom: 50px;
+
+    &__logo {
+      margin-bottom: 30px;
+
+      .logo {
+        width: 295px;
+        margin: 0 auto;
+      }
+
+      p {
+        font-size: 14px;
+        padding-top: 18px;
+      }
+    }
+
+    &__description {
+      max-width: 400px;
+      margin: 0 auto 30px;
+      padding: 0 20px;
+
+      p {
+        text-align: left;
+        font-size: 13px;
+        line-height: 26px;
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    &__link {
+      max-width: 229px;
+      margin: 0 auto 30px;
+      padding-top: 0;
+
+      ul {
+        li {
+          a {
+            width: 62px;
+            height: 62px;
+            background-size: 62px 186px;
+          }
+        }
+
+        li.fb a {
+          background-position: 0 0;
+        }
+
+        li.tw a {
+          background-position: 0 -62px;
+        }
+
+        li.ln a {
+          background-position: 0 -124px;
+        }
+
+        li.ln {
+          display: block;
+        }
+      }
+    }
+
+    &__ci {
+      margin-bottom: 10px;
+
+      a {
+        width: 113px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .l-footer {
+    padding-top: 36px;
+    padding-bottom: 70px;
+
+    &__logo {
+      margin-bottom: 28px;
+
+      .logo {
+        width: 295px;
+        margin: 0 auto;
+      }
+
+      p {
+        font-size: 13px;
+        padding-top: 35px;
+      }
+    }
+
+    &__description {
+      margin: 0 auto 23px;
+    }
+
+    &__link {
+      margin: 0 auto 38px;
+    }
+
+    &__ci {
+      margin-bottom: 20px;
+
+      a {
+        width: 113px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  //
+}

@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------------------
+　メルマガバナー
+--------------------------------------------------------------------- */
+
+.banner-mailmag {
+  img {
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+
+  span,
+  a,
+  a:visited {
+    display: block;
+  }
+
+  a {
+    text-align: center;
+    background-color: #006cc2;
+    border: 2px solid;
+    border-color: #0e5bad;
+  }
+}
+
+// top
+.l-content__top-mailmag {
+  padding-top: 10px;
+  margin-bottom: 100px;
+
+  a {
+    padding: 28px;
+  }
+
+  span {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+// post, list
+.content-post-mailmag {
+  padding-top: 40px;
+  margin-bottom: 80px;
+
+  a {
+    padding: 20px 28px 21px;
+  }
+
+  span {
+    max-width: 428px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .banner-mailmag {
+    a {
+      transition: background-color .2s, border-color .2s;
+
+      &:hover {
+        background-color: #0082ce;
+        border-color: #116dbd;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .l-content__top-mailmag {
+    padding-top: 0;
+    margin-bottom: 80px;
+
+    a {
+      padding: 20px 28px 21px;
+    }
+
+    span {
+      max-width: 428px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .l-content__top-mailmag,
+  .content-post-mailmag {
+    padding-top: 0;
+    margin-bottom: 60px;
+
+    a {
+      border: 1px solid;
+      padding: 20px 28px 21px;
+    }
+
+    span {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .l-content__top-mailmag,
+  .content-post-mailmag {
+    padding-top: 0;
+    margin-bottom: 40px;
+
+    a {
+      padding: 15px 15px 14px;
+    }
+
+    span {
+      max-width: 290px;
+      margin: 0 auto;
+    }
+  }
+}

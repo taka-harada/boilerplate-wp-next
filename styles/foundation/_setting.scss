@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+/* color setting
+*/
+$baseColor: #1a1a1a;
+$baseTxtColor: #1a1a1a;
+$baseLinkColor: #0773ed;
+
+$categoryColor_acientcity: #bea659;
+$categoryColor_traditional: #bea659;
+$categoryColor_footculture: #bea659;
+$categoryColor_classic: #bea659;
+$categoryColor_blog: #bea659;
+
+/* background Color Setting
+*/
+@mixin backGroundSetting_A {
+  background-color: #fff;
+  background-image: url(../img/bg_whptn.png);
+  background-repeat: repeat;
+  background-position: left top;
+}
+
+@mixin backGroundSetting_B {
+  background-color: #e4382f;
+  background-image: url(../img/bg_ptn.png);
+  background-repeat: repeat;
+  background-position: left top;
+
+  // @media screen and (max-width: 600px) {
+  //   background-image: url(../img/bg_ptn_sp.png);
+  // }
+}
+
+@mixin backGroundSetting_C {
+  background: #c9b264;
+}
+
+/* Header Setting
+*/
+$headerBgColor: #fff;
+$navColor: #fff;
+
+/* Global Menu Color Setting
+*/
+$globalMenuTxtColor: #1a1a1a;
+$globalMenuActiveBorder: #1a1a1a;
+$deactivateMenuTxtColor: #e4e2e2;
+
+// slideMenu (smp menu)
+$menuBtnBorderColor: #1a1a1a;
+
+$slideMenuTxtColor: #fff;
+$slideMenuBgColor: #1a1a1a;
+$slideMenuBorderColor: #313131;
+
+/* Footer Color Setting
+*/
+$footerBgColor: #1a1a1a;
+$footerMenuTxtColor: #fff;
+$footerTxtColor: #fff;
+
+/* Title Text Color Setting
+*/
+$titleTxtColor: #1a1a1a;
+$titleBorderColor: #1a1a1a;
+$titleSubTxtColor: #1a1a1a;
+
+/* Post Text Color
+*/
+$h2HeadColor: #1a1a1a;
+$postLinkColor: #0773ed;
+$h3HeadColor: #1a1a1a;
+
+$posth1TxtColor: #1a1a1a;
+$posth2TxtColor: #1a1a1a;
+$posth3TxtColor: #1a1a1a;
+$postTxtColor: #1a1a1a;
+
+/* slider Color Setting
+*/
+$SliderDotsColor: #fff;
+
+/* loading Color Setting
+*/
+$LoadingIconColor: #efbf34;

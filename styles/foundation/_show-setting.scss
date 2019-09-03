@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.sp {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .pc {
+    display: none;
+  }
+
+  .sp {
+    display: block;
+  }
+}
+
+// @media screen and (max-width: 600px) {
+//   .sp {
+//     display: block;
+//   }
+// }

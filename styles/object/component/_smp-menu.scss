@@ -1,0 +1,227 @@
+@charset "utf-8";
+
+/* nav smp menu
+------------------------ */
+
+// nav menu
+.c-nav-menu {
+  position: relative;
+  z-index: 5;
+
+  &.is-open:before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 0;
+
+    height: 100vh;
+
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  &.alp:before {
+    opacity: 1;
+  }
+
+  &.is-open {
+    #nav-menu {
+      left: 0;
+      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .2);
+    }
+  }
+}
+
+// nav-menu
+#nav-menu {
+  display: block;
+
+  position: fixed;
+  top: 60px;
+  left: -320px;
+  // bottom: 0;
+  z-index: 0;
+  height: calc(100vh - 60px);
+  width: 320px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  background-color: $slideMenuBgColor;
+
+  transition: left .3s;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .c-nav-menu__list {
+    &:first-child {
+      border-top: 1px solid $slideMenuBorderColor;
+    }
+
+    li {
+      border-bottom: 1px solid $slideMenuBorderColor;
+    }
+
+    a,
+    a:visited {
+      position: relative;
+      z-index: 0;
+      display: block;
+
+      font-family: 'Montserrat', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif;
+
+      color: $slideMenuTxtColor;
+      font-size: 15px;
+      line-height: 22px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      padding: 21px 44px 20px 22px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        z-index: 0;
+
+        width: 16px;
+        height: 16px;
+
+        margin-top: -8px;
+
+        background-image: url(../img/header/nav_arw_icon.png);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 100% 100%;
+      }
+    }
+
+    &--other {
+      a,
+      a:visited {
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+  }
+
+  > ul:last-child {
+    padding-bottom: 120px;
+  }
+
+  .c-login {
+    border-bottom: 1px solid #e8e8e8;
+
+    // ログイン前
+    .c-login__signin {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+
+      li {
+        width: 48.33%;
+
+        a {
+          box-sizing: border-box;
+          text-align: center;
+          display: block;
+          font-size: 14px;
+          line-height: 16px;
+          font-weight: normal;
+
+          height: 41px;
+          border-radius: 4px;
+          padding: 12px 8px 0;
+        }
+      }
+
+      &--registration {
+        a {
+          color: #1a1a1a;
+          border: 1px solid #d3d3d3;
+          background-color: #fff;
+        }
+      }
+
+      &--login {
+        margin-left: 8px;
+
+        a {
+          color: #fff;
+          border: 1px solid #3d70cf;
+          background-color: #3d70cf;
+        }
+      }
+    }
+
+    // ログイン後
+    .c-login__signout {
+      padding: 10px;
+
+      &--username {
+        position: relative;
+        height: 41px;
+
+        p {
+          text-align: left;
+          color: #1a1a1a;
+          font-size: 12px;
+          line-height: 16px;
+          font-weight: normal;
+
+          padding: 13px 0 0 44px;
+
+          a,
+          a:visited,
+          span {
+            color: #1a1a1a;
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 4px;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 0;
+          }
+        }
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 4px;
+          left: 3px;
+          z-index: 0;
+
+          width: 31px;
+          height: 31px;
+
+          background-image: url(../img/header/nav_user_icon.png);
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          background-size: 100% 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .c-nav-menu {
+    &.is-open:before {
+      top: 48px;
+    }
+  }
+
+  #nav-menu {
+    top: 48px;
+    height: calc(100vh - 48px);
+  }
+}

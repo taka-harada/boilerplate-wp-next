@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------------------
+　btn
+--------------------------------------------------------------------- */
+
+.c-btn {
+  input[type="submit"],
+  input[type="button"],
+  button,
+  a {
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    width: 100%;
+  }
+
+  &--more-articles,
+  &--more {
+    a,
+    a:visited {
+      color: #fff;
+      background-color: #1a1a1a;
+
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: bold;
+      letter-spacing: .08em;
+
+      padding: 18px 52px 18px 60px;
+      border-radius: 30px;
+    }
+
+    a:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      z-index: 0;
+
+      width: 40px;
+      height: 40px;
+      margin-top: -20px;
+
+      background-image: url("../img/post/btn_icon_more.png");
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 100% 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .c-btn {
+    &--more-articles,
+    &--more {
+      a {
+        opacity: 1;
+        transition: opacity .2s;
+      }
+
+      a:hover {
+        opacity: .7;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .c-btn {
+    &--more-articles,
+    &--more {
+      a,
+      a:visited {
+        font-size: 15px;
+        line-height: 22px;
+
+        padding: 15px 47px 15px 55px;
+        border-radius: 26px;
+      }
+
+      a:before {
+        left: 12px;
+
+        width: 36px;
+        height: 36px;
+        margin-top: -18px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .c-btn {
+    &--more-articles,
+    &--more {
+      a,
+      a:visited {
+        font-size: 14px;
+        line-height: 20px;
+
+        padding: 14px 35px 14px 45px;
+        border-radius: 24px;
+      }
+
+      a:before {
+        left: 11px;
+
+        width: 32px;
+        height: 32px;
+        margin-top: -16px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  //
+}

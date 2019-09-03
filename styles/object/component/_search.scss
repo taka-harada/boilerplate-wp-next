@@ -1,0 +1,151 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------------------
+　search
+--------------------------------------------------------------------- */
+
+.c-search {
+  // display: none;
+  box-sizing: border-box;
+  background-color: #000;
+  padding: 30px 50px;
+
+  position: fixed;
+  z-index: 2;
+  top: 60px;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 60px);
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .4s, visibility .4s ease-in-out;
+
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+
+    transition: opacity .3s, visibility 0;
+  }
+
+  &__box {
+    width: 100%;
+    max-width: 524px;
+    margin: 0 auto;
+  }
+
+  .search-input-text {
+    display: flex;
+    position: relative;
+    z-index: 0;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 74px;
+      z-index: 0;
+
+      height: 1px;
+      background-color: #fff;
+    }
+  }
+
+  #btn-search {
+    width: 60px;
+    height: 60px;
+    background-image: url("../img/header/search_icon.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% 100%;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+
+    margin: 0 0 0 14px;
+  }
+
+  input[type="search"],
+  input[type="text"] {
+    flex: 1;
+    box-sizing: border-box;
+    width: 100%;
+    height: 46px;
+
+    color: #fff;
+    font-size: 32px;
+    line-height: 32px;
+    padding: 0 2px;
+    position: relative;
+    background-color: transparent;
+    border-radius: 0;
+    border: 0;
+    outline: none;
+    -webkit-appearance: none;
+
+    @include placeholderColor(#292929);
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    // -webkit-animation-name: autofill;
+    // -webkit-animation-fill-mode: both;
+    -webkit-text-fill-color: #fff;
+    -webkit-box-shadow: 0 0 0 100px #000 inset;
+  }
+}
+
+// @-webkit-keyframes autofill {
+//   to {
+//     color: #fff;
+//     background: transparent;
+//   }
+// }
+
+@media screen and (max-width: 800px) {
+  .c-search {
+    top: 48px;
+    height: calc(100vh - 48px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .c-search {
+    padding: 20px 30px;
+
+    &__box {
+      margin: -20% auto 0;
+    }
+
+    .search-input-text {
+      &:after {
+        bottom: -5px;
+        right: 54px;
+      }
+    }
+
+    #btn-search {
+      width: 45px;
+      height: 45px;
+
+      margin: 0 0 0 9px;
+    }
+
+    input[type="search"],
+    input[type="text"] {
+      height: 36px;
+
+      font-size: 24px;
+      line-height: 24px;
+      padding: 0 2px;
+    }
+  }
+}
