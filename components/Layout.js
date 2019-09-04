@@ -5,7 +5,7 @@ import Header from '../components/Header/Header'
 import GlobalNavi from '../components/GlobalNavi/GlobalNavi'
 import RegisterArea from '../components/RegisterArea/RegisterArea'
 import Footer from '../components/Footer/Footer'
-import ScrollUpBtn from '../components/ScrollUpBtn/ScrollUpBtn'
+import ScrollUpBtn from '../components/atoms/ScrollUpBtn/ScrollUpBtn'
 // import Footer from "../Footer/Index";
 // import './Index.scss'
 

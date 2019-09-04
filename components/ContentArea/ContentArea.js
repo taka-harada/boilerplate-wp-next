@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 
 import ListPost from './ListPost'
+import Button from '../atoms/Button/Button'
 
 import PostImage from '../../static/PostImage'
 import './ContentArea.scss'
 import './Title.scss'
 
 class ContentArea extends Component {
+
   render() {
     return (
       <section className="l-content-area">
@@ -23,8 +25,9 @@ class ContentArea extends Component {
               <ListPost />
 
               <div className="p-article-bloc__btn">
-                <div className="c-btn c-btn--more"><a href="#">一覧を見る</a></div>
+                <Button>一覧を見る</Button>
               </div>
+
             </div>
           </div>
         </div>
