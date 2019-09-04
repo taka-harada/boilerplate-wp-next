@@ -11,7 +11,7 @@ class ScrollUpBtn extends Component {
 
   render() {
     return (
-      <div class="c-page-top show" onClick={this.scrollToTop}>
+      <div className="c-page-top show" onClick={this.scrollToTop}>
         <a href="#"><img src="../../static/common/page_top_icon.svg" alt="pagetop" /></a>
       </div>
     );

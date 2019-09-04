@@ -5,8 +5,9 @@ import './Card.scss'
 
 class Card extends Component {
   render() {
+
     return (
-      <article className="c-card c-card--l">
+      <article className={this.props.lcardFlg ? 'c-card c-card--l' : 'c-card c-card--s' }>
         <div className="c-card__img">
           <div className="img-box"><a href="#"><img src={this.props.source_url} alt="eyecatch image" /></a></div>
           <div className="badge-category badge-ancientcity"><a href="#">日本の古都</a></div>
