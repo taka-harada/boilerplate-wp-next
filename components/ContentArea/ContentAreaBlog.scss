@@ -58,15 +58,6 @@
   max-width: 260px;
 }
 
-.yarpp-related {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-items: stretch;
-  margin-bottom: 30px;
-}
-
 .p-article-bloc--category {
   &:nth-child(odd) {
     @include backGroundSetting_B;
@@ -122,28 +113,6 @@
   }
 }
 
-.p-archive {
-  &__title {
-    margin-bottom: 33px;
-  }
-
-  &__list {
-    margin-bottom: 60px;
-
-    &--head {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      align-items: stretch;
-    }
-  }
-
-  &__btn {
-    max-width: 260px;
-    margin: 0 auto;
-  }
-}
-
 p.no-article {
   flex: 1;
   text-align: center;
@@ -158,19 +127,11 @@ p.no-article {
   padding: 30px 40px 70px;
 }
 
-.p-archive__list p.no-article {
-  padding: 40px 40px 100px;
-}
-
 @media screen and (max-width: 1200px) {
   //
 }
 
 @media screen and (max-width: 800px) {
-  .l-content--list {
-    padding: 60px 0 80px;
-  }
-
   .l-wrap__outer {
     padding: 0 60px;
   }
@@ -197,10 +158,6 @@ p.no-article {
 }
 
 @media screen and (max-width: 600px) {
-  .l-content--list {
-    padding: 45px 0 60px;
-  }
-
   .l-wrap__outer {
     padding: 0 30px;
   }
@@ -211,10 +168,6 @@ p.no-article {
       margin-left: 0;
       margin-right: 0;
     }
-  }
-
-  .yarpp-related {
-    justify-content: space-between;
   }
 
   .p-article-bloc--category {
@@ -266,31 +219,9 @@ p.no-article {
     font-size: 20px;
     line-height: 28px;
   }
-
-  .p-archive {
-    &__title {
-      margin-bottom: 28px;
-    }
-
-    &__list {
-      margin-bottom: 50px;
-    }
-
-    &__btn {
-      max-width: 220px;
-    }
-  }
-
-  .p-archive__list p.no-article {
-    padding: 30px 40px 60px;
-  }
 }
 
 @media screen and (max-width: 400px) {
-  .l-content--list {
-    padding: 40px 0 50px;
-  }
-
   .l-wrap__outer {
     padding: 0 13px;
   }
@@ -350,23 +281,5 @@ p.no-article {
     p.no-article {
       padding: 30px 20px 40px;
     }
-  }
-
-  .p-archive {
-    &__title {
-      margin-bottom: 24px;
-    }
-
-    &__list {
-      margin-bottom: 40px;
-    }
-
-    &__btn {
-      max-width: 185px;
-    }
-  }
-
-  .p-archive__list p.no-article {
-    padding: 20px 30px 40px;
   }
 }

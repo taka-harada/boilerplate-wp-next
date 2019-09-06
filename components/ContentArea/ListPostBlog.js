@@ -4,7 +4,7 @@ import fetch from 'isomorphic-unfetch'
 import { url } from '../../Api/Api'
 import Card from '../atoms/Card/Card'
 
-class ListPost extends Component {
+class ListPostBlog extends Component {
   constructor() {
     super();
     this.isLoading = false;
@@ -36,12 +36,12 @@ class ListPost extends Component {
   }
 
   renderPost() {
-    const postNum = 5;
+    const postNum = 10;
     const arrPost = this.state.data.slice(0, postNum);
 
     const blogPost = arrPost.map((item, index) => {
       return (
-        <Card {...item} key={item.id} lcardFlg={index < 2} route={'top'} />
+        <Card {...item} key={item.id} lcardFlg={index < 2} route={'archive'} />
       )
     });
 
@@ -54,7 +54,6 @@ class ListPost extends Component {
     }
   }
 
-
   render() {
 
     if(this.state.isLoaded) {
@@ -66,4 +65,4 @@ class ListPost extends Component {
 
 }
 
-export default ListPost;
+export default ListPostBlog;

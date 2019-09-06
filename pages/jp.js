@@ -1,56 +1,62 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 import Router, { withRouter } from 'next/router'
+import { blog } from '../Api/Api'
 
 import Layout from '../components/Layout'
-import MainVisual from '../components/MainVisual/MainVisual'
-import ContentArea from '../components/ContentArea/ContentArea'
+import ContentAreaBlog from '../components/ContentArea/ContentAreaBlog'
 // import TopContent from '../components/Project/Top/TopContent'
 // import Slider from '../components/Project/Top/Slider'
 // import '../components/Project/Top/Top.scss'
 
-class Top extends Component {
-  constructor(props){
+class Post extends Component {
+
+  constructor(props) {
     super(props);
-    // this.state = {
-    //   data: this.props.data
-    // };
+    this.state = {
+      data: this.props.data
+    };
   }
 
   static async getInitialProps({query, pathname, asPath}) {
-    // const res = await blog(query.page)
-    // const data = await res.json()
+    const res = await blog(query.page)
+    const data = await res.json()
 
-    return {pathname, asPath}
+    return {data, pathname, asPath}
   }
 
   render () {
+
+    // console.log('start')
+    // const router = this.props.router
+    // console.log(router)
+    // const query = router.query
+    // console.log(query)
+    // console.log('end')
+
     return (
-      <Layout title="Top Page">
-        <MainVisual />
-        <ContentArea {...this.props} />
-        <Link href="./jp">
-          <button>Go to BLOG ARCHIVE &gt;&gt;</button>
+      <Layout title='JP BLOG アーカイブ'>
+        <ContentAreaBlog data={this.state.data} route={this.props.router}/>
+        <Link href="./index">
+          <button>Go to TOP &gt;&gt;</button>
         </Link>
         <Link href="./other">
-          <button>Go to Other &gt;&gt;</button>
+          <button>Go to OTHER &gt;&gt;</button>
         </Link>
       </Layout>
     )
   }
 }
 
-export default withRouter(Top);
-
+export default withRouter(Post);
 // export default () => (
-//   <Layout title="Top Page">
-//     <MainVisual />
-//     <ContentArea />
-//     <Link href="./jp">
-//       <button>Go to BLOG ARCHIVE &gt;&gt;</button>
+//   <Layout title="Archive Blog Page">
+//     <ContentAreaBlog />
+//     <Link href="./index">
+//       <button>Go to TOP &gt;&gt;</button>
 //     </Link>
 //     <Link href="./other">
-//       <button>Go to Other &gt;&gt;</button>
+//       <button>Go to OTHER &gt;&gt;</button>
 //     </Link>
 //   </Layout>
 // );

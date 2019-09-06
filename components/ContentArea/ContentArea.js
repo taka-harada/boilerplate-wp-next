@@ -10,8 +10,6 @@ import './Title.scss'
 class ContentArea extends Component {
 
   render() {
-    console.log(this.props);
-    console.log('stateを表示');
     return (
       <section className="l-content-area">
         <div className="l-content l-content--top">
@@ -25,7 +23,7 @@ class ContentArea extends Component {
               </dl>
 
               <div className="p-article-bloc__card-wrap">
-                <ListPost />
+                <ListPost {...this.props} />
               </div>
 
               <div className="p-article-bloc__btn">
