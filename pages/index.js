@@ -32,8 +32,8 @@ class Top extends Component {
         <Link href="./jp">
           <button>Go to BLOG ARCHIVE &gt;&gt;</button>
         </Link>
-        <Link href="./other">
-          <button>Go to Other &gt;&gt;</button>
+        <Link href="./post">
+          <button>Go to Post &gt;&gt;</button>
         </Link>
       </Layout>
     )

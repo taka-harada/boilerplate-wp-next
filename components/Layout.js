@@ -7,7 +7,7 @@ import RegisterArea from '../components/RegisterArea/RegisterArea'
 import Footer from '../components/Footer/Footer'
 import ScrollUpBtn from '../components/atoms/ScrollUpBtn/ScrollUpBtn'
 // import Footer from "../Footer/Index";
-// import './Index.scss'
+import './Layout.scss'
 
 class Layout extends Component {
   render() {

@@ -1,52 +1,58 @@
 import React, { Component } from 'react'
+import Error from 'next/error'
 import Link from 'next/link'
-import Router, { withRouter } from 'next/router'
-import { blog, blogPost } from '../Api/Api'
+//import Router, { withRouter } from 'next/router'
+import { withRouter } from 'next/router'
+import { blogPost } from '../Api/Api'
 
 import Layout from '../components/Layout'
-import ContentAreaBlog from '../components/ContentArea/ContentAreaBlog'
+// import ContentAreaBlog from '../components/ContentArea/ContentAreaBlog'
+
 // import TopContent from '../components/Project/Top/TopContent'
 // import Slider from '../components/Project/Top/Slider'
 // import '../components/Project/Top/Top.scss'
 
-class Archive extends Component {
+class Post extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      data: this.props.data
-    };
   }
 
-  static async getInitialProps({query, pathname, asPath}) {
-
-    // const {id, apiRoute} = query
-    // const response = await blogPost(id)
-    // const post = await response.json()
-
-    const res = await blog(query.page)
-    const data = await res.json()
-
-    return {data, query, pathname, asPath}
+  static async getInitialProps({ query }) {
+    const { id } = query
+    const res = await blogPost(id)
+    const post = await res.json()
+    return {
+      post
+    }
   }
 
   render () {
 
+    console.log('start post')
+    console.log(this.props)
+    // const query = router.query
+    // console.log(query)
+    console.log('end')
+
     return (
-      <Layout title='JP BLOG アーカイブ'>
-        <ContentAreaBlog data={this.state.data} route={this.props.router}/>
+      <Layout title='JP BLOG Single'>
+        <article dangerouslySetInnerHTML={ {
+          __html: this.props.post.content.rendered
+        }}></article>
         <Link href="./index">
           <button>Go to TOP &gt;&gt;</button>
         </Link>
-        <Link href="./other">
-          <button>Go to OTHER &gt;&gt;</button>
+        <Link href="./post">
+          <button>Go to POST &gt;&gt;</button>
         </Link>
       </Layout>
     )
   }
 }
 
-export default withRouter(Archive);
+export default withRouter(Post);
+
 // export default () => (
 //   <Layout title="Archive Blog Page">
 //     <ContentAreaBlog />
