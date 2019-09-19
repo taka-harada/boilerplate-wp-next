@@ -4,7 +4,7 @@ import Router, { withRouter } from 'next/router'
 import { blog, blogPost } from '../Api/Api'
 
 import Layout from '../components/Layout'
-import ContentAreaBlog from '../components/ContentArea/ContentAreaBlog'
+import ContentAreaJpArchive from '../components/ContentArea/ContentAreaJpArchive'
 // import TopContent from '../components/Project/Top/TopContent'
 // import Slider from '../components/Project/Top/Slider'
 // import '../components/Project/Top/Top.scss'
@@ -32,9 +32,13 @@ class Archive extends Component {
 
   render () {
 
+    // console.log('archive start')
+    // console.log(this.props)
+    // console.log('archive end')
+
     return (
       <Layout title='JP BLOG アーカイブ'>
-        <ContentAreaBlog data={this.state.data} route={this.props.router}/>
+        <ContentAreaJpArchive data={this.state.data} route={this.props.router}/>
         <Link href="./index">
           <button>Go to TOP &gt;&gt;</button>
         </Link>
