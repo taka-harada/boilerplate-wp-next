@@ -6,7 +6,7 @@ import { withRouter } from 'next/router'
 import { blogPost } from '../Api/Api'
 
 import Layout from '../components/Layout'
-// import ContentAreaBlog from '../components/ContentArea/ContentAreaBlog'
+import PostJp from '../components/ContentArea/Post/PostJp'
 
 // import TopContent from '../components/Project/Top/TopContent'
 // import Slider from '../components/Project/Top/Slider'
@@ -29,17 +29,13 @@ class Post extends Component {
 
   render () {
 
-    console.log('start post')
-    console.log(this.props)
-    // const query = router.query
-    // console.log(query)
-    console.log('end')
+    // console.log('start post')
+    // console.log(this.props)
+    // console.log('end')
 
     return (
       <Layout title='JP BLOG Single'>
-        <article dangerouslySetInnerHTML={ {
-          __html: this.props.post.content.rendered
-        }}></article>
+        <PostJp {...this.props} />
         <Link href="./index">
           <button>Go to TOP &gt;&gt;</button>
         </Link>
