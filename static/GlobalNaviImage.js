@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 export class ArwLeft extends Component {
   constructor(props){
     super(props);
-    this.fname = "./static/nav/" + props.fname;
+    this.fname = "/static/nav/" + props.fname;
     this.size = props.size + "px";
     this.alt = props.alt
   }
@@ -18,7 +18,7 @@ export class ArwLeft extends Component {
 export class ArwRight extends Component {
   constructor(props){
     super(props);
-    this.fname = "./static/nav/" + props.fname;
+    this.fname = "/static/nav/" + props.fname;
     this.size = props.size + "px";
     this.alt = props.alt
   }
