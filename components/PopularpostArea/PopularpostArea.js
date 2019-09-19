@@ -9,6 +9,7 @@ import PostImage from '../../static/PostImage'
 class PopularpostArea extends Component {
 
   render() {
+
     return (
       <div className="l-wrap__outer p-article-bloc p-article-bloc--recommend">
         <div className="l-wrap__inner l-wrap__inner--reco">
@@ -18,18 +19,17 @@ class PopularpostArea extends Component {
             <dd className="en">category</dd>
           </dl>
 
-        </div>
-
-        <div className="p-article-bloc__card-warp">
-          <div className="yarpp-related">
-            <ListPostPopular />
+          <div className="p-article-bloc__card-warp">
+            <div className="yarpp-related">
+              <ListPostPopular />
+            </div>
           </div>
-        </div>
 
-        <div className="p-archive__btn">
-          <Button>一覧を見る</Button>
-        </div>
+          <div className="p-archive__btn">
+            <Button>一覧を見る</Button>
+          </div>
 
+        </div>
       </div>
     )
   }
