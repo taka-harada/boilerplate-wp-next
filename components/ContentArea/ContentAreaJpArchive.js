@@ -5,10 +5,10 @@ import PopularpostArea from '../PopularpostArea/PopularpostArea'
 import Button from '../atoms/Button/Button'
 
 import PostImage from '../../static/PostImage'
-import './ContentArea.scss'
+import './ContentAreaJpArchive.scss'
 import './Title.scss'
 
-class ContentAreaBlog extends Component {
+class ContentAreaJpArchive extends Component {
 
   render() {
 
@@ -51,4 +51,4 @@ class ContentAreaBlog extends Component {
   }
 }
 
-export default ContentAreaBlog;
+export default ContentAreaJpArchive;
