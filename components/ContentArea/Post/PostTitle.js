@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Moment from 'react-moment'
 
 import './PostTitle.scss'
 
@@ -14,8 +15,14 @@ class PostTitle extends Component {
       <header className="p-article__header">
         <h1>{this.props.post.title.rendered}</h1>
         <ul className="post-date">
-          <li className="date">2018.12.20</li>
-          <li className="update">2019.08.23<span>Update</span></li>
+          <li className="date">
+            <Moment format="YYYY.MM.DD">{this.props.post.date}</Moment></li>
+          <li className="update">
+            <Moment format="YYYY.MM.DD">
+            {this.props.post.modified}
+            </Moment>
+            <span>Update</span>
+          </li>
         </ul>
         <div className="eyecatch">
           <div className="eyecatch-image">
