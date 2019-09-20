@@ -7,9 +7,6 @@ import PostImage from '../../static/PostImage'
 class SocialBox extends Component {
 
   render() {
-    console.log('start social')
-    console.log(this.props)
-    console.log('end social')
     let currentPath = this.props.router.asPath
 
     return (
