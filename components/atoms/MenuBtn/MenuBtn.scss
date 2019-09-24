@@ -1,0 +1,67 @@
+@charset "utf-8";
+@import '../../../styles/global.scss';
+
+// nav nav
+#nav-btn {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  z-index: 0;
+
+  a {
+    display: block;
+    position: relative;
+    width: 60px;
+    height: 60px;
+  }
+
+  a {
+    span {
+      display: block;
+      background: $menuBtnBorderColor;
+      width: 34px;
+      height: 2px;
+      position: absolute;
+      left: 13px;
+      transition: all .2s;
+    }
+
+    span:first-child {
+      top: 17px;
+    }
+
+    span:nth-child(2) {
+      top: 50%;
+      margin-top: -3px;
+    }
+
+    span:last-child {
+      bottom: 21px;
+    }
+  }
+}
+
+// X
+nav.is-open {
+  #nav-btn {
+    a {
+      span {
+        width: 34px;
+        height: 2px;
+        left: 13px;
+      }
+
+      span:first-child {
+        transform: translateY(10px) rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:last-child {
+        transform: translateY(-10px) rotate(-45deg);
+      }
+    }
+  }
+}

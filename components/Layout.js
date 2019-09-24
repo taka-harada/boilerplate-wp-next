@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 // import Router, { withRouter } from 'next/router'
+import Link from 'next/link'
 import Head from 'next/head'
-import Header from '../components/Header/Header'
-import GlobalNavi from '../components/GlobalNavi/GlobalNavi'
-import RegisterArea from '../components/RegisterArea/RegisterArea'
-import Footer from '../components/Footer/Footer'
+import Header from '../components/organisms/Header/Header'
+import GlobalNavi from '../components/molecules/GlobalNavi/GlobalNavi'
+import RegisterArea from '../components/molecules/RegisterArea/RegisterArea'
+import Footer from '../components/organisms/Footer/Footer'
 import ScrollUpBtn from '../components/atoms/ScrollUpBtn/ScrollUpBtn'
 // import Footer from "../Footer/Index";
 import './Layout.scss'
@@ -22,6 +23,16 @@ class Layout extends Component {
           <div className="l-project-wrap">
             <Header />
             <GlobalNavi />
+            <Link href="./">
+              <button>Go to TOP &gt;&gt;</button>
+            </Link>
+            <Link href="./jp">
+              <button>Go to BLOG ARCHIVE &gt;&gt;</button>
+            </Link>
+            <Link href="./post">
+              <button>Go to Post &gt;&gt;</button>
+            </Link>
+
             {this.props.children}
           </div>
           <RegisterArea />

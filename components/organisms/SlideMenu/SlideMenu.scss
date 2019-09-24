@@ -1,0 +1,119 @@
+@charset "utf-8";
+@import '../../../styles/global.scss';
+
+// nav menu
+.c-nav-menu {
+  position: relative;
+  z-index: 5;
+
+  &.is-open:before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 0;
+
+    height: 100vh;
+
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  &.alp:before {
+    opacity: 1;
+  }
+
+  &.is-open {
+    #nav-menu {
+      left: 0;
+      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .2);
+    }
+  }
+}
+
+#nav-menu {
+  display: block;
+  position: fixed;
+  top: 60px;
+  left: -320px;
+  z-index: 0;
+  height: calc(100vh - 60px);
+  width: 320px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  background-color: $slideMenuBgColor;
+  transition: left .3s;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .c-nav-menu__list {
+    &:first-child {
+      border-top: 1px solid $slideMenuBorderColor;
+    }
+
+    li {
+      border-bottom: 1px solid $slideMenuBorderColor;
+    }
+
+    a,
+    a:visited {
+      position: relative;
+      z-index: 0;
+      display: block;
+      font-family: 'Montserrat', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif;
+      color: $slideMenuTxtColor;
+      font-size: 15px;
+      line-height: 22px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      padding: 21px 44px 20px 22px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        z-index: 0;
+
+        width: 16px;
+        height: 16px;
+
+        margin-top: -8px;
+
+        background-image: url(/static/nav/nav_arw_icon.png);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 100% 100%;
+      }
+    }
+
+    &--other {
+      a,
+      a:visited {
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+  }
+
+  > ul:last-child {
+    padding-bottom: 120px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .c-nav-menu {
+    &.is-open:before {
+      top: 48px;
+    }
+  }
+
+  #nav-menu {
+    top: 48px;
+    height: calc(100vh - 48px);
+  }
+}

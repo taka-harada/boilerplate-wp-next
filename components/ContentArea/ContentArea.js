@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import ListPost from './ListPost'
+import ListPost from '../molecules/ListPost/ListPost'
 import Button from '../atoms/Button/Button'
 
 import PostImage from '../../static/PostImage'

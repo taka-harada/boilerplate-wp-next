@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import ListPostBlog from './ListPostBlog'
-import PopularpostArea from '../PopularpostArea/PopularpostArea'
+import ListPostBlog from '../molecules/ListPostBlog/ListPostBlog'
+import PopularpostArea from '../molecules/PopularpostArea/PopularpostArea'
 import Button from '../atoms/Button/Button'
 
 import PostImage from '../../static/PostImage'
