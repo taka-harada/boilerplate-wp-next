@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import fetch from 'isomorphic-unfetch'
-import { url } from '../../../Api/Api'
+import { url, postType } from '../../../Api/Api'
 import Card from '../../atoms/Card/Card'
 
 class ListPost extends Component {
@@ -20,7 +20,7 @@ class ListPost extends Component {
     if (!this.isLoading) {
       console.log(this.props)
       this.isLoading = true;
-      const link = `${url}wp/v2/blog`
+      const link = `${url}wp/v2/${postType}`
       return fetch(link).then(res => res.json())
       .then(data => {
         this.setState({
@@ -56,6 +56,9 @@ class ListPost extends Component {
 
 
   render() {
+    console.log('listPost start')
+    console.log(this.state.isLoaded)
+    console.log('listPost end')
 
     if(this.state.isLoaded) {
       return this.renderPost();

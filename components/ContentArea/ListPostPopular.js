@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import fetch from 'isomorphic-unfetch'
-import { url } from '../../Api/Api'
+import { url, postType } from '../../Api/Api'
 import Card from '../atoms/Card/Card'
 
 class ListPostPopular extends Component {
@@ -20,7 +20,7 @@ class ListPostPopular extends Component {
     if (!this.isLoading) {
       console.log(this.props)
       this.isLoading = true;
-      const link = `${url}wp/v2/blog`
+      const link = `${url}wp/v2/${postType}`
       return fetch(link).then(res => res.json())
       .then(data => {
         this.setState({
