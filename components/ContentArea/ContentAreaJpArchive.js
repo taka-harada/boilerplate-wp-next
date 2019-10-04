@@ -9,22 +9,17 @@ import './ContentAreaJpArchive.scss'
 import './Title.scss'
 
 class ContentAreaJpArchive extends Component {
-
   render() {
-
     // console.log('ContentAreaBlog のstateを表示');
     // console.log('start')
-    // console.log(this.state);
+    // console.log(this.props);
     // console.log('end')
 
     return (
       <section className="l-content-area">
-
         <div className="l-content l-content--list">
-
           <div className="l-wrap__outer p-archive">
             <div className="l-wrap__inner l-wrap__inner--list">
-
               <dl className="p-archive__title c-bloc-title">
                 <dt className="jp">日本</dt>
               </dl>
@@ -38,7 +33,6 @@ class ContentAreaJpArchive extends Component {
               <div className="p-archive__btn">
                 <Button>もっと読む</Button>
               </div>
-
             </div>
           </div>
         </div>

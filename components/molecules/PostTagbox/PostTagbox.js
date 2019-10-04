@@ -15,10 +15,6 @@ class PostTagbox extends Component {
         </Link>
       </li>
     ));
-    // console.log("start tagbox");
-    // console.log(this.props);
-    // console.log(tags);
-    // console.log("end tagbox");
 
     return (
       <section className="p-articlefoot-tags">

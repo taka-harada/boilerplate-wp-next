@@ -7,9 +7,6 @@ import "./PostFooter.scss";
 
 class PostFooter extends Component {
   render() {
-    console.log("start postFooter");
-    console.log(this.props);
-    console.log("end postFooter");
     return (
       <footer className="p-article__footer">
         {this.props.post.common_tag && <PostTagbox {...this.props} />}

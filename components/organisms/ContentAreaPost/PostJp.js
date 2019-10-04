@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 import PostTitle from '../../molecules/PostTitle/PostTitle'
 import PostContent from '../../molecules/PostContent/PostContent'
@@ -12,25 +12,19 @@ import PostImage from '../../../static/PostImage'
 // import './PostJp.scss'
 
 class PostJp extends Component {
-
   render() {
-
     // console.log('start postjp')
     // console.log(this.props);
     // console.log('end postjp')
 
     return (
       <section className="l-content-area">
-
         <div className="l-content l-content--post">
-
           <article className="l-wrap__outer p-article">
             <div className="l-wrap__inner l-wrap__inner--post">
-
               <PostTitle {...this.props} />
               <PostContent {...this.props} />
-              <PostFooter />
-
+              <PostFooter {...this.props} />
             </div>
           </article>
 
@@ -40,7 +34,7 @@ class PostJp extends Component {
         <PopularpostArea />
         <RankingPostArea />
       </section>
-    )
+    );
   }
 }
 
