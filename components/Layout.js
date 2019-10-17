@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 // import Router, { withRouter } from 'next/router'
 import Link from 'next/link'
 import Head from 'next/head'
@@ -15,18 +15,18 @@ class Layout extends Component {
     return (
       <div>
         <Head>
-            <title>{ this.props.title }  | Hivelocity (ハイベロシティ) デジタルでビジネスを最適化</title>
-            <meta charSet='utf-8' />
-            <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+          <title>{this.props.title}  | Hivelocity (ハイベロシティ) デジタルでビジネスを最適化</title>
+          <meta charSet='utf-8' />
+          <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         </Head>
         <div id="bst-wrap" className="outer-wrap">
           <div className="l-project-wrap">
             <Header />
             <GlobalNavi />
-            <Link href="./">
+            <Link as={`/`} href={{ pathname: "/index" }}>
               <button>Go to TOP &gt;&gt;</button>
             </Link>
-            <Link href="./jp">
+            <Link as={`/jp/`} href={{ pathname: "/jp" }}>
               <button>Go to BLOG ARCHIVE &gt;&gt;</button>
             </Link>
             <Link href="./post">
