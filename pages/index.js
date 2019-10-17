@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Router, { withRouter } from 'next/router'
 
 import Layout from '../components/Layout'
-import MainVisual from '../components/MainVisual/MainVisual'
+import MainVisual from '../components/organisms/MainVisual/MainVisual'
 import ContentArea from '../components/ContentArea/ContentArea'
 // import TopContent from '../components/Project/Top/TopContent'
 // import Slider from '../components/Project/Top/Slider'
@@ -29,12 +29,6 @@ class Top extends Component {
       <Layout title="Top Page">
         <MainVisual />
         <ContentArea {...this.props} />
-        <Link href="./jp">
-          <button>Go to BLOG ARCHIVE &gt;&gt;</button>
-        </Link>
-        <Link href="./post">
-          <button>Go to Post &gt;&gt;</button>
-        </Link>
       </Layout>
     )
   }
