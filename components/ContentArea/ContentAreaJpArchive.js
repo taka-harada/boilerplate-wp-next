@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import ListPostBlog from '../molecules/ListPostBlog/ListPostBlog'
 import PopularpostArea from '../molecules/PopularpostArea/PopularpostArea'
+import TitleCategoryArchive from '../atoms/TitleCategoryArchive/TitleCategoryArchive'
 import Button from '../atoms/Button/Button'
 
 import PostImage from '../../static/PostImage'
@@ -10,10 +11,11 @@ import './Title.scss'
 
 class ContentAreaJpArchive extends Component {
   render() {
-    // console.log('ContentAreaBlog のstateを表示');
-    // console.log('start')
-    // console.log(this.props);
-    // console.log('end')
+
+    console.log('ContentAreaBlog のstateを表示');
+    console.log('start')
+    console.log(this.props);
+    console.log('end')
 
     return (
       <section className="l-content-area">
@@ -21,7 +23,10 @@ class ContentAreaJpArchive extends Component {
           <div className="l-wrap__outer p-archive">
             <div className="l-wrap__inner l-wrap__inner--list">
               <dl className="p-archive__title c-bloc-title">
-                <dt className="jp">日本</dt>
+                <TitleCategoryArchive
+                  data={this.props.data}
+                  route={this.props.route}
+                />
               </dl>
 
               <section className="p-archive__list">
