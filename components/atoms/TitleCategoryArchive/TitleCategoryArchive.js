@@ -26,6 +26,8 @@ class TitleCategoryArchive extends Component {
       case "/jp/travel-blog/":
         return <dt className="jp">旅人のブログ</dt>
         break;
+      default:
+        return <dt className="jp">日本</dt>
     }
   }
 
