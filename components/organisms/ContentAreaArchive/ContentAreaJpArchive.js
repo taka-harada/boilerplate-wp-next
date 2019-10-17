@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 
-import ListPostBlog from '../molecules/ListPostBlog/ListPostBlog'
-import PopularpostArea from '../molecules/PopularpostArea/PopularpostArea'
-import TitleCategoryArchive from '../atoms/TitleCategoryArchive/TitleCategoryArchive'
-import Button from '../atoms/Button/Button'
+import ListPostBlog from '../../molecules/ListPostBlog/ListPostBlog'
+import PopularpostArea from '../../molecules/PopularpostArea/PopularpostArea'
+import TitleCategoryArchive from '../../atoms/TitleCategoryArchive/TitleCategoryArchive'
+import Button from '../../atoms/Button/Button'
 
-import PostImage from '../../static/PostImage'
 import './ContentAreaJpArchive.scss'
-import './Title.scss'
+import '../ContentArea/Title.scss'
 
 class ContentAreaJpArchive extends Component {
   render() {
