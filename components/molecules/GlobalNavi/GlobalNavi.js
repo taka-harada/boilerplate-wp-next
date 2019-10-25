@@ -46,7 +46,7 @@ class GlobalNavi extends Component {
                 </Link>
               </li>
               <li>
-                <Link as={`/jp/travel-blog/`} href={{ pathname: "categoryJp" }}>
+                <Link as={`/jp/travel-blog/`} href={{ pathname: "/categoryJp" }}>
                   <a>旅人のブログ</a>
                 </Link>
               </li>
