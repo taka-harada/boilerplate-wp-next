@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import fetch from 'isomorphic-unfetch'
-import { url, postType } from '../../../Api/Api'
+import { blog, url, postType } from '../../../Api/Api'
 import Card from '../../atoms/Card/Card'
 
 class ListPostBlog extends Component {
@@ -18,16 +18,14 @@ class ListPostBlog extends Component {
 
   fetchData() {
     if (!this.isLoading) {
-      console.log(this.props)
-      this.isLoading = true;
-      const link = `${url}wp/v2/${postType}`
-      return fetch(link).then(res => res.json())
-      .then(data => {
-        this.setState({
-          data: data,
-          isLoaded: true
-        })
-      });
+      return blog().then(res => res.json())
+        .then(data => {
+          this.setState({
+            data: data,
+            isLoaded: true,
+            isLoading: false
+          })
+        });
     }
   }
 
@@ -45,7 +43,7 @@ class ListPostBlog extends Component {
       )
     });
 
-    if(blogPost.length > 0) {
+    if (blogPost.length > 0) {
       return blogPost
     } else {
       return (
@@ -56,7 +54,7 @@ class ListPostBlog extends Component {
 
   render() {
 
-    if(this.state.isLoaded) {
+    if (this.state.isLoaded) {
       return this.renderPost();
     } else {
       return <p>spiner</p>

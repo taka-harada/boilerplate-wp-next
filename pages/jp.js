@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 import Router, { withRouter } from "next/router"
-import { blog, blogPost } from "../Api/Api"
+//import { blog, blogPost } from "../Api/Api"
 
 import Layout from "../components/Layout"
-import ContentAreaJpArchive from "../components/ContentArea/ContentAreaJpArchive"
+import ContentAreaJpArchive from "../components/organisms/ContentAreaArchive/ContentAreaJpArchive"
 // import TopContent from '../components/Project/Top/TopContent'
 // import Slider from '../components/Project/Top/Slider'
 // import '../components/Project/Top/Top.scss'
@@ -21,10 +21,10 @@ class Archive extends Component {
     // const response = await blogPost(id)
     // const post = await response.json()
 
-    const res = await blog(query.page)
-    const data = await res.json()
+    // const res = await blog(query.page)
+    // const data = await res.json()
 
-    return { data, query, pathname, asPath }
+    return { query, pathname, asPath }
   }
 
   render() {
@@ -35,7 +35,6 @@ class Archive extends Component {
     return (
       <Layout title="JP BLOG アーカイブ">
         <ContentAreaJpArchive
-          data={this.state.data}
           route={this.props.router}
         />
       </Layout>

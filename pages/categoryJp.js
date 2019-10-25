@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 import Router, { withRouter } from 'next/router'
-import { category } from '../Api/Api'
+//import { category } from '../Api/Api'
 
 import Layout from '../components/Layout'
-import ContentAreaJpArchive from '../components/ContentArea/ContentAreaJpArchive'
+import ContentAreaJpArchive from '../components/organisms/ContentAreaArchive/ContentAreaJpArchive'
 // import TopContent from '../components/Project/Top/TopContent'
 // import Slider from '../components/Project/Top/Slider'
 // import '../components/Project/Top/Top.scss'
 
 class Archive extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -18,27 +17,23 @@ class Archive extends Component {
     };
   }
 
-  static async getInitialProps({query, pathname, asPath}) {
+  static async getInitialProps({ query, pathname, asPath }) {
 
     // const {id, apiRoute} = query
     // const response = await blogPost(id)
     // const post = await response.json()
 
-    const res = await category(asPath, 1)
-    const data = await res.json()
+    // const res = await category(asPath, 1)
+    // const data = await res.json()
 
-    return {data, query, pathname, asPath}
+    return { query, pathname, asPath }
   }
 
-  render () {
-
-    console.log('start cate')
-    console.log(this.props)
-    console.log('end cate')
+  render() {
 
     return (
       <Layout title='JP CATEGORY アーカイブ'>
-        <ContentAreaJpArchive data={this.state.data} route={this.props.router}/>
+        <ContentAreaJpArchive route={this.props.router} />
         <Link href="./index">
           <button>Go to TOP &gt;&gt;</button>
         </Link>

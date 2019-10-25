@@ -4,27 +4,27 @@ import Router, { withRouter } from 'next/router'
 
 import Layout from '../components/Layout'
 import MainVisual from '../components/organisms/MainVisual/MainVisual'
-import ContentArea from '../components/ContentArea/ContentArea'
+import ContentArea from '../components/organisms/ContentArea/ContentArea'
 // import TopContent from '../components/Project/Top/TopContent'
 // import Slider from '../components/Project/Top/Slider'
 // import '../components/Project/Top/Top.scss'
 
 class Top extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     // this.state = {
     //   data: this.props.data
     // };
   }
 
-  static async getInitialProps({query, pathname, asPath}) {
+  static async getInitialProps({ query, pathname, asPath }) {
     // const res = await blog(query.page)
     // const data = await res.json()
 
-    return {pathname, asPath}
+    return { pathname, asPath }
   }
 
-  render () {
+  render() {
     return (
       <Layout title="Top Page">
         <MainVisual />
