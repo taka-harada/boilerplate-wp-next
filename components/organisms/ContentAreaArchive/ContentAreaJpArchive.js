@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import ListPostBlog from '../../molecules/ListPostBlog/ListPostBlog'
+import ListPostBlogCategory from '../../molecules/ListPostBlogCategory/ListPostBlogCategory'
 import PopularpostArea from '../../molecules/PopularpostArea/PopularpostArea'
 import TitleCategoryArchive from '../../atoms/TitleCategoryArchive/TitleCategoryArchive'
 import Button from '../../atoms/Button/Button'
@@ -11,10 +12,8 @@ import '../ContentArea/Title.scss'
 class ContentAreaJpArchive extends Component {
   render() {
 
-    console.log('ContentAreaBlog のstateを表示');
-    console.log('start')
-    console.log(this.props);
-    console.log('end')
+    let jpCategoryRoute = /\/jp\/.*\//
+    let currentRoute = jpCategoryRoute.test(this.props.route.asPath)
 
     return (
       <section className="l-content-area">
@@ -23,14 +22,13 @@ class ContentAreaJpArchive extends Component {
             <div className="l-wrap__inner l-wrap__inner--list">
               <dl className="p-archive__title c-bloc-title">
                 <TitleCategoryArchive
-                  data={this.props.data}
                   route={this.props.route}
                 />
               </dl>
 
               <section className="p-archive__list">
                 <div id="list-inner" className="p-archive__list--head">
-                  <ListPostBlog />
+                  {currentRoute ? <ListPostBlogCategory route={this.props.route} /> : <ListPostBlog route={this.props.route} />}
                 </div>
               </section>
 
