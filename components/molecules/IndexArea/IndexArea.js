@@ -24,11 +24,11 @@ class IndexArea extends Component {
           </div>
 
           <div className="p-article-bloc__btn">
-            <Button path={this.props.category} >一覧を見る</Button>
+            <Button path={`${this.props.category}` + `/`} >一覧を見る</Button>
           </div>
 
         </div>
-      </div>
+      </div >
     )
   }
 
