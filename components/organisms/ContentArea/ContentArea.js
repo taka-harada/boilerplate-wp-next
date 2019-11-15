@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-
-import ListPost from '../../molecules/ListPost/ListPost'
-import Button from '../../atoms/Button/Button'
+import IndexArea from '../../molecules/IndexArea/IndexArea'
 
 import './ContentArea.scss'
 import './Title.scss'
@@ -9,28 +7,17 @@ import './Title.scss'
 class ContentArea extends Component {
 
   render() {
+
     return (
       <section className="l-content-area">
         <div className="l-content l-content--top">
 
-          <div className="l-wrap__outer p-article-bloc p-article-bloc--category">
-            <div className="l-wrap__inner l-wrap__inner--top">
+          <IndexArea jpTitle={'日本の古都'} enTitle={'Ancient City in Japan'} category={'/jp/ancient-city'} />
+          <IndexArea jpTitle={'日本の伝統'} enTitle={'Japan Traditional'} category={'/jp/traditional'} />
+          <IndexArea jpTitle={'日本の食文化'} enTitle={'Japanese Food Culture'} category={'/jp/culture'} />
+          <IndexArea jpTitle={'名所・旧跡'} enTitle={'Classic Ground'} category={'/jp/classic-ground'} />
+          <IndexArea jpTitle={'旅人のブログ'} enTitle={'Classic Ground'} category={'/jp/travel-blog'} />
 
-              <dl className="p-article-bloc__title c-bloc-title">
-                <dt className="jp">日本の古都</dt>
-                <dd className="en">Ancient City in Japan</dd>
-              </dl>
-
-              <div className="p-article-bloc__card-wrap">
-                <ListPost {...this.props} />
-              </div>
-
-              <div className="p-article-bloc__btn">
-                <Button>一覧を見る</Button>
-              </div>
-
-            </div>
-          </div>
         </div>
       </section>
     )
