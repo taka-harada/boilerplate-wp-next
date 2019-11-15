@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import ListPostBlog from '../../molecules/ListPostBlog/ListPostBlog'
 import ListPostBlogCategory from '../../molecules/ListPostBlogCategory/ListPostBlogCategory'
 import PopularpostArea from '../../molecules/PopularpostArea/PopularpostArea'
-import TitleCategoryArchive from '../../atoms/TitleCategoryArchive/TitleCategoryArchive'
+import TitleCategory from '../../atoms/TitleCategory/TitleCategory'
 import Button from '../../atoms/Button/Button'
 
 import './ContentAreaJpArchive.scss'
@@ -20,11 +20,9 @@ class ContentAreaJpArchive extends Component {
         <div className="l-content l-content--list">
           <div className="l-wrap__outer p-archive">
             <div className="l-wrap__inner l-wrap__inner--list">
-              <dl className="p-archive__title c-bloc-title">
-                <TitleCategoryArchive
-                  route={this.props.route}
-                />
-              </dl>
+              <TitleCategory
+                route={this.props.route}
+              />
 
               <section className="p-archive__list">
                 <div id="list-inner" className="p-archive__list--head">
