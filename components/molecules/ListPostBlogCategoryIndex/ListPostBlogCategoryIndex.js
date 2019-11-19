@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import { category } from '../../../Api/Api'
 import Card from '../../atoms/Card/Card'
 
