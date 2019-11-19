@@ -1,23 +1,15 @@
 import React, { Component } from "react";
 import Link from "next/link";
 
-import PostImage from "../../../static/PostImage";
 import "./Card.scss";
 
 class Card extends Component {
   renderTopCard() {
     return (
-      <article
-        className={
-          this.props.lcardFlg ? "c-card c-card--l" : "c-card c-card--s"
-        }
-      >
+      <article className={this.props.lcardFlg ? "c-card c-card--l" : "c-card c-card--s"}>
         <div className="c-card__img">
           <div className="img-box">
-            <Link
-              as={`/jp/${this.props.id}`}
-              href={{ pathname: "/postJp", query: { id: this.props.id } }}
-            >
+            <Link as={`/jp/${this.props.id}`} href={{ pathname: "/postJp", query: { id: this.props.id } }}>
               <a>
                 <img src={this.props.featured_image} alt="eyecatch image" />
               </a>
@@ -25,13 +17,7 @@ class Card extends Component {
           </div>
           {this.props.jp_category && (
             <div className="badge-category badge-ancientcity">
-              <Link
-                as={`/jp/${this.props.jp_category[0].slug}`}
-                href={{
-                  pathname: "/categoryJp",
-                  query: { slug: this.props.slug }
-                }}
-              >
+              <Link as={`/jp/${this.props.jp_category[0].slug}`} href={{ pathname: "/categoryJp", query: { slug: this.props.slug } }}>
                 <a>{this.props.jp_category[0].name}</a>
               </Link>
             </div>
@@ -55,13 +41,7 @@ class Card extends Component {
 
   renderArchiveCard() {
     return (
-      <article
-        className={
-          this.props.lcardFlg
-            ? "c-card c-card--archive-row"
-            : "c-card c-card--archive-column"
-        }
-      >
+      <article className={this.props.lcardFlg ? "c-card c-card--archive-row" : "c-card c-card--archive-column"}>
         <div className="c-card__img">
           <div className="img-box">
             <Link
@@ -155,10 +135,6 @@ class Card extends Component {
 
   render() {
     const currentRoute = this.props.route;
-
-    // console.log("start categoryInfo card");
-    // console.log(this.props.jp_category);
-    // console.log("end card");
 
     switch (currentRoute) {
       case "archive":

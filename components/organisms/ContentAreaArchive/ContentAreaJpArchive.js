@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 
 import ListPostBlog from '../../molecules/ListPostBlog/ListPostBlog'
+
+/* molecules */
 import ListPostBlogCategory from '../../molecules/ListPostBlogCategory/ListPostBlogCategory'
-import PopularpostArea from '../../molecules/PopularpostArea/PopularpostArea'
-import TitleCategoryArchive from '../../atoms/TitleCategoryArchive/TitleCategoryArchive'
+import PopularPostArea from '../../molecules/PopularPostArea/PopularPostArea'
+
+/* atoms */
+import TitleCategory from '../../atoms/TitleCategory/TitleCategory'
 import Button from '../../atoms/Button/Button'
 
 import './ContentAreaJpArchive.scss'
@@ -21,7 +25,7 @@ class ContentAreaJpArchive extends Component {
           <div className="l-wrap__outer p-archive">
             <div className="l-wrap__inner l-wrap__inner--list">
               <dl className="p-archive__title c-bloc-title">
-                <TitleCategoryArchive
+                <TitleCategory
                   route={this.props.route}
                 />
               </dl>
@@ -33,14 +37,14 @@ class ContentAreaJpArchive extends Component {
               </section>
 
               <div className="p-archive__btn">
-                <Button>もっと読む</Button>
+                <Button >もっと読む</Button>
               </div>
             </div>
           </div>
         </div>
 
         <div>
-          <PopularpostArea />
+          <PopularPostArea route={this.props.route} />
         </div>
       </section>
     )

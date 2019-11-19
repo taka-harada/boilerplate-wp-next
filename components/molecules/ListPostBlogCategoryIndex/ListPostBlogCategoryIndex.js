@@ -3,23 +3,24 @@ import React, { Component } from 'react'
 import { category } from '../../../Api/Api'
 import Card from '../../atoms/Card/Card'
 
-class ListPostBlogCategory extends Component {
-  constructor() {
-    super();
+class ListPostBlogCategoryIndex extends Component {
+  constructor(props) {
+    super(props);
     this.isLoading = false;
     this.fetchData = this.fetchData.bind(this);
     this.renderPost = this.renderPost.bind(this);
     this.state = {
       data: [],
-      isLoaded: false
+      isLoaded: false,
+      categoryName: props.category
     }
   }
 
   fetchData() {
     if (this.isLoading === false) {
-      let path = this.props.route.asPath
+      let categoryName = this.props.category
 
-      return category(this.props.route.asPath, 1).then(res => res.json())
+      return category(categoryName, 1).then(res => res.json())
         .then(data => {
           this.setState({
             data: data,
@@ -36,24 +37,23 @@ class ListPostBlogCategory extends Component {
     this.fetchData();
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.props.route.asPath !== prevProps.route.asPath) {
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (this.props.route.asPath !== prevProps.route.asPath) {
 
-      // 2回目以降のfetch
-      this.fetchData();
+  //     // 2回目以降のfetch
+  //     this.fetchData();
 
-    }
-  }
+  //   }
+  // }
 
   renderPost() {
 
-    const postMaxNum = 10;
-    const postNum = this.state.data.total
-    const arrPost = this.state.data.posts.slice(0, postNum);
+    const postMaxNum = 5;
+    const arrPost = this.state.data.posts.slice(0, postMaxNum);
 
     const blogPost = arrPost.map((item, index) => {
       return (
-        <Card {...item} key={item.id} lcardFlg={index < 2} route={'archive'} />
+        <Card {...item} key={item.id} lcardFlg={index < 2} route={'index'} />
       )
     });
 
@@ -67,7 +67,6 @@ class ListPostBlogCategory extends Component {
   }
 
   render() {
-
     if (this.state.isLoaded) {
       return this.renderPost();
     } else {
@@ -77,4 +76,4 @@ class ListPostBlogCategory extends Component {
 
 }
 
-export default ListPostBlogCategory;
+export default ListPostBlogCategoryIndex;

@@ -1,7 +1,7 @@
 const routes = require('next-routes')
 
 module.exports = routes()
-    .add('top', '/')
+    .add('index', '/')
     .add('archiveJp', '/jp')
     .add('postJp', '/jp/:id', 'post')
     .add('categoryJp', '/jp/category/:slug', 'category')

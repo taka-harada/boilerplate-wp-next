@@ -1,14 +1,21 @@
 import React, { Component } from 'react'
 
-import ListPostPopular from '../../ContentArea/ListPostPopular'
-import Card from '../../atoms/Card/Card'
+/* molecules */
+import ListPostBlogPopularIndex from '../../molecules/ListPostBlogPopularIndex/ListPostBlogPopularIndex'
+
+/* atoms */
 import Button from '../../atoms/Button/Button'
 
 import PostImage from '../../../static/PostImage'
 
-class PopularpostArea extends Component {
+class PopularPostArea extends Component {
 
   render() {
+
+    console.log('ポピュラーポストエリア start')
+    console.log(this.props)
+    console.log(this.state)
+    console.log('ポピュラーポストエリア end')
 
     return (
       <div className="l-wrap__outer p-article-bloc p-article-bloc--recommend">
@@ -21,12 +28,12 @@ class PopularpostArea extends Component {
 
           <div className="p-article-bloc__card-warp">
             <div className="yarpp-related">
-              <ListPostPopular />
+              <ListPostBlogPopularIndex route={this.props.route} />
             </div>
           </div>
 
           <div className="p-archive__btn">
-            <Button>一覧を見る</Button>
+            <Button path={this.props.route.asPath}>一覧を見る</Button>
           </div>
 
         </div>
@@ -35,4 +42,4 @@ class PopularpostArea extends Component {
   }
 }
 
-export default PopularpostArea;
+export default PopularPostArea;

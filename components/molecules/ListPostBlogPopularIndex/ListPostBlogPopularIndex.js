@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { category } from '../../../Api/Api'
 import Card from '../../atoms/Card/Card'
 
-class ListPostBlogCategory extends Component {
+class ListPostBlogPopularIndex extends Component {
   constructor() {
     super();
     this.isLoading = false;
@@ -17,7 +17,6 @@ class ListPostBlogCategory extends Component {
 
   fetchData() {
     if (this.isLoading === false) {
-      let path = this.props.route.asPath
 
       return category(this.props.route.asPath, 1).then(res => res.json())
         .then(data => {
@@ -45,23 +44,23 @@ class ListPostBlogCategory extends Component {
     }
   }
 
+
   renderPost() {
-
-    const postMaxNum = 10;
+    const postMaxNum = 5;
     const postNum = this.state.data.total
-    const arrPost = this.state.data.posts.slice(0, postNum);
+    const arrPost = this.state.data.posts.slice(0, postMaxNum);
 
-    const blogPost = arrPost.map((item, index) => {
+    const popularPost = arrPost.map((item, index) => {
       return (
-        <Card {...item} key={item.id} lcardFlg={index < 2} route={'archive'} />
+        <Card {...item} key={item.id} lcardFlg={index < 2} route={'popular'} />
       )
     });
 
-    if (blogPost.length > 0) {
-      return blogPost
+    if (popularPost.length > 0) {
+      return popularPost
     } else {
       return (
-        <p>関連記事はありません。</p>
+        <p>関連記事はありません</p>
       )
     }
   }
@@ -77,4 +76,4 @@ class ListPostBlogCategory extends Component {
 
 }
 
-export default ListPostBlogCategory;
+export default ListPostBlogPopularIndex;

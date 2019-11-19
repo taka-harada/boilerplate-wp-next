@@ -22,12 +22,12 @@ class ListPost extends Component {
       this.isLoading = true;
       const link = `${url}wp/v2/${postType}`
       return fetch(link).then(res => res.json())
-      .then(data => {
-        this.setState({
-          data: data,
-          isLoaded: true
-        })
-      });
+        .then(data => {
+          this.setState({
+            data: data,
+            isLoaded: true
+          })
+        });
     }
   }
 
@@ -45,7 +45,7 @@ class ListPost extends Component {
       )
     });
 
-    if(blogPost.length > 0) {
+    if (blogPost.length > 0) {
       return blogPost
     } else {
       return (
@@ -57,10 +57,11 @@ class ListPost extends Component {
 
   render() {
     console.log('listPost start')
+    console.log(this.props)
     console.log(this.state.isLoaded)
     console.log('listPost end')
 
-    if(this.state.isLoaded) {
+    if (this.state.isLoaded) {
       return this.renderPost();
     } else {
       return <p>spiner</p>
