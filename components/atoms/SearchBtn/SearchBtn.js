@@ -6,7 +6,7 @@ class SearchBtn extends Component {
   constructor(props) {
     super(props);
     // this.state = {
-    //   flg: true,
+    //   flg: this.props.flg
     // };
     // this.doAction = this.doAction.bind(this);
   }
