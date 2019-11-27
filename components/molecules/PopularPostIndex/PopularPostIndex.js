@@ -7,9 +7,6 @@ import TitleCategory from '../../atoms/TitleCategory/TitleCategory'
 class IndexArea extends Component {
 
   render() {
-    console.log('インデックスエリア start')
-    console.log(this.props)
-    console.log('インデックスエリア　end')
     return (
       <div className="l-wrap__outer p-article-bloc p-article-bloc--category">
         <div className="l-wrap__inner l-wrap__inner--top">
