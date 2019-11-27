@@ -10,7 +10,7 @@ const Button = ({ path, children }) => {
   switch (children) {
     case '一覧を見る':
     case 'もっと読む':
-      return <div className="c-btn c-btn--more"><Link as={path} href={{ pathname: "/categoryJp", asPath: path, query: { id: path } }}><a>{children}</a></Link></div>
+      return <div className="c-btn c-btn--more"><Link as={path} href={{ pathname: "/categoryJp", query: { id: path } }}><a>{children}</a></Link></div>
       break;
     default:
       return <div className="c-btn"><a href="#">{children}</a></div>
