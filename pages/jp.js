@@ -28,9 +28,9 @@ class Archive extends Component {
   }
 
   render() {
-    // console.log('archive start')
-    // console.log(this.props)
-    // console.log('archive end')
+    console.log('アーカイブ start')
+    console.log(this.props)
+    console.log('アーカイブ end')
 
     return (
       <Layout title="JP BLOG アーカイブ">

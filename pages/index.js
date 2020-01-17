@@ -25,6 +25,10 @@ class Top extends Component {
   }
 
   render() {
+    console.log('インデックス start')
+    console.log(this.props)
+    console.log(this.state)
+    console.log('インデックス end')
     return (
       <Layout title="Top Page">
         <MainVisual />

@@ -7,9 +7,10 @@ import "./PostFooter.scss";
 
 class PostFooter extends Component {
   render() {
+
     return (
       <footer className="p-article__footer">
-        {this.props.post.common_tag && <PostTagbox {...this.props} />}
+        {this.props.post.commontag && <PostTagbox {...this.props} />}
         <PostAuthorbox {...this.props} />
       </footer>
     );

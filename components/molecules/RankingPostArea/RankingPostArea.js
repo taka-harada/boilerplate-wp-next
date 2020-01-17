@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import ListPostPopular from '../../ContentArea/ListPostPopular'
+//import ListPostPopular from '../../ContentArea/ListPostPopular'
 import Card from '../../atoms/Card/Card'
 
 import PostImage from '../../../static/PostImage'

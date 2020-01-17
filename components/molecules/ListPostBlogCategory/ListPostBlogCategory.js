@@ -17,9 +17,9 @@ class ListPostBlogCategory extends Component {
 
   fetchData() {
     if (this.isLoading === false) {
-      let path = this.props.route.asPath
+      let path = this.props.router.asPath
 
-      return category(this.props.route.asPath, 1).then(res => res.json())
+      return category(this.props.router.asPath, 1).then(res => res.json())
         .then(data => {
           this.setState({
             data: data,
@@ -37,7 +37,7 @@ class ListPostBlogCategory extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.route.asPath !== prevProps.route.asPath) {
+    if (this.props.router.asPath !== prevProps.router.asPath) {
 
       // 2回目以降のfetch
       this.fetchData();
@@ -67,7 +67,10 @@ class ListPostBlogCategory extends Component {
   }
 
   render() {
-
+    console.log('リストポストブログカテゴリー start')
+    console.log(this.props)
+    console.log(this.state)
+    console.log('リストポストブログカテゴリー end')
     if (this.state.isLoaded) {
       return this.renderPost();
     } else {

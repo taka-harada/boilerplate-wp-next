@@ -15,10 +15,10 @@ class Card extends Component {
               </a>
             </Link>
           </div>
-          {this.props.jp_category && (
+          {this.props.jpcategory && (
             <div className="badge-category badge-ancientcity">
-              <Link as={`/jp/${this.props.jp_category[0].slug}`} href={{ pathname: "/categoryJp", query: { slug: this.props.slug } }}>
-                <a>{this.props.jp_category[0].name}</a>
+              <Link as={`/jp/${this.props.jpcategory[0].slug}`} href={{ pathname: "/categoryJp", query: { slug: this.props.slug } }}>
+                <a>{this.props.jpcategory[0].name}</a>
               </Link>
             </div>
           )}
@@ -53,7 +53,7 @@ class Card extends Component {
               </a>
             </Link>
           </div>
-          {this.props.jp_category && (
+          {this.props.jpcategory && (
             <div className="badge-category badge-ancientcity">
               <Link
                 as={`/jp/tag/${this.props.slug}`}
@@ -62,7 +62,7 @@ class Card extends Component {
                   query: { slug: this.props.slug }
                 }}
               >
-                <a>{this.props.jp_category[0].name}</a>
+                <a>{this.props.jpcategory[0].name}</a>
               </Link>
             </div>
           )}
@@ -103,16 +103,16 @@ class Card extends Component {
               </a>
             </Link>
           </div>
-          {this.props.jp_category && (
+          {this.props.jpcategory && (
             <div className="badge-category badge-ancientcity">
               <Link
-                as={`/jp/${this.props.jp_category[0].slug}`}
+                as={`/jp/${this.props.jpcategory[0].slug}`}
                 href={{
                   pathname: "/categoryJp",
                   query: { slug: this.props.slug }
                 }}
               >
-                <a>{this.props.jp_category[0].name}</a>
+                <a>{this.props.jpcategory[0].name}</a>
               </Link>
             </div>
           )}

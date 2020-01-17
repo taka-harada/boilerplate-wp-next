@@ -8,6 +8,10 @@ class ContentArea extends Component {
 
   render() {
 
+    console.log('コンテンツインデックス start')
+    console.log(this.props)
+    console.log('コンテンツインデックス end')
+
     return (
       <section className="l-content-area">
         <div className="l-content l-content--top">

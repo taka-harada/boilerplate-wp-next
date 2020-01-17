@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
-import { category } from '../../../Api/Api'
+import { search } from '../../../Api/Api'
 import Card from '../../atoms/Card/Card'
 
-class ListPostBlogPopularIndex extends Component {
-  constructor() {
-    super();
+class ListPostSearchResult extends Component {
+  constructor(props) {
+    super(props);
     this.isLoading = false;
     this.fetchData = this.fetchData.bind(this);
     this.renderPost = this.renderPost.bind(this);
@@ -18,13 +18,9 @@ class ListPostBlogPopularIndex extends Component {
   fetchData() {
     if (this.isLoading === false) {
 
-      //let categoryName = this.props.post.jpcategory[0].slug
+      let keyword = this.props.query.s
 
-      let categoryPath = this.props.router.asPath
-      let pathArr = categoryPath.split('/')
-      let categoryName = pathArr[1]
-
-      return category(categoryName, 1).then(res => res.json())
+      return search(keyword, 1).then(res => res.json())
         .then(data => {
           this.setState({
             data: data,
@@ -42,7 +38,7 @@ class ListPostBlogPopularIndex extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.router.asPath !== prevProps.router.asPath) {
+    if (this.props.query.s !== prevProps.query.s) {
 
       // 2回目以降のfetch
       this.fetchData();
@@ -50,32 +46,34 @@ class ListPostBlogPopularIndex extends Component {
     }
   }
 
-
   renderPost() {
-    const postMaxNum = 5;
-    const postNum = this.state.data.total
-    const arrPost = this.state.data.slice(0, postMaxNum);
 
-    const popularPost = arrPost.map((item, index) => {
+    const postMaxNum = 10;
+    const postNum = this.state.data.total
+    const arrPost = this.state.data.posts.slice(0, postNum);
+
+    const blogPost = arrPost.map((item, index) => {
       return (
-        <Card {...item} key={item.id} lcardFlg={index < 2} route={'popular'} />
+        <Card {...item} key={item.id} lcardFlg={index < 2} route={'archive'} />
       )
     });
 
-    if (popularPost.length > 0) {
-      return popularPost
+    if (blogPost.length > 0) {
+      return blogPost
     } else {
       return (
-        <p>関連記事はありません</p>
+        <p>関連記事はありません。</p>
       )
     }
   }
 
   render() {
 
-    console.log('ブログポピュラーインデックス start')
+    console.log('リストポストサーチリザルト start')
+    console.log(this.props.query.s)
     console.log(this.props)
     console.log(this.state)
+    console.log('リストポストサーチリザルト end')
 
     if (this.state.isLoaded) {
       return this.renderPost();
@@ -86,4 +84,4 @@ class ListPostBlogPopularIndex extends Component {
 
 }
 
-export default ListPostBlogPopularIndex;
+export default ListPostSearchResult;

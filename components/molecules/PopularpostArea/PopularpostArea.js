@@ -12,10 +12,10 @@ class PopularPostArea extends Component {
 
   render() {
 
-    console.log('ポピュラーポストエリア start')
+    console.log('ポピュラーポスト')
     console.log(this.props)
     console.log(this.state)
-    console.log('ポピュラーポストエリア end')
+    let categoryRoute = this.props.route
 
     return (
       <div className="l-wrap__outer p-article-bloc p-article-bloc--recommend">
@@ -28,12 +28,17 @@ class PopularPostArea extends Component {
 
           <div className="p-article-bloc__card-warp">
             <div className="yarpp-related">
-              <ListPostBlogPopularIndex route={this.props.route} />
+              <ListPostBlogPopularIndex {...this.props} />
             </div>
           </div>
 
           <div className="p-archive__btn">
-            <Button path={this.props.route.asPath}>一覧を見る</Button>
+            {categoryRoute && (
+              <Button path={this.props.route.asPath}>一覧を見る</Button>
+            )}
+            {!categoryRoute && (
+              <Button>一覧を見る</Button>
+            )}
           </div>
 
         </div>

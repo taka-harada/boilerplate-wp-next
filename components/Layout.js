@@ -7,7 +7,6 @@ import GlobalNavi from '../components/molecules/GlobalNavi/GlobalNavi'
 import RegisterArea from '../components/molecules/RegisterArea/RegisterArea'
 import Footer from '../components/organisms/Footer/Footer'
 import ScrollUpBtn from '../components/atoms/ScrollUpBtn/ScrollUpBtn'
-// import Footer from "../Footer/Index";
 import './Layout.scss'
 
 class Layout extends Component {
@@ -21,18 +20,8 @@ class Layout extends Component {
         </Head>
         <div id="bst-wrap" className="outer-wrap">
           <div className="l-project-wrap">
-            <Header />
+            <Header flg={true} />
             <GlobalNavi />
-            <Link as={`/`} href={{ pathname: "/index" }}>
-              <button>Go to TOP &gt;&gt;</button>
-            </Link>
-            <Link as={`/jp/`} href={{ pathname: "/jp" }}>
-              <button>Go to BLOG ARCHIVE &gt;&gt;</button>
-            </Link>
-            <Link href="./post">
-              <button>Go to Post &gt;&gt;</button>
-            </Link>
-
             {this.props.children}
           </div>
           <RegisterArea />
