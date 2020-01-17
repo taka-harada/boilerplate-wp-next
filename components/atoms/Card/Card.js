@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Link from "next/link";
-
+import Moment from "react-moment";
 import "./Card.scss";
 
 class Card extends Component {
@@ -69,6 +69,7 @@ class Card extends Component {
         </div>
         <div className="c-card__txt">
           <div className="txt-box">
+            <h3 class="date"><Moment format="YYYY.MM.DD">{this.props.date}</Moment></h3>
             <h2>
               <Link
                 as={`/jp/${this.props.id}`}
