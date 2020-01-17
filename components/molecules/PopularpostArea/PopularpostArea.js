@@ -22,7 +22,7 @@ class PopularPostArea extends Component {
         <div className="l-wrap__inner l-wrap__inner--reco">
 
           <dl className="p-article-bloc__title c-bloc-title">
-            <dt className="jp">人気の記事</dt>
+            <dt className="jp">おすすめ記事</dt>
             <dd className="en">category</dd>
           </dl>
 
