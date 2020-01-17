@@ -17,7 +17,11 @@ class ContentAreaJpArchive extends Component {
   render() {
 
     let jpCategoryRoute = /\/jp\/.*\//
-    let currentRoute = jpCategoryRoute.test(this.props.route.asPath)
+    let currentRoute = jpCategoryRoute.test(this.props.router.asPath)
+    console.log('カテゴリアーカイブstart')
+    console.log(this.props)
+    console.log(this.state)
+    console.log('カテゴリアーカイブend')
 
     return (
       <section className="l-content-area">
@@ -26,13 +30,13 @@ class ContentAreaJpArchive extends Component {
             <div className="l-wrap__inner l-wrap__inner--list">
               <dl className="p-archive__title c-bloc-title">
                 <TitleCategory
-                  route={this.props.route}
+                  router={this.props.router}
                 />
               </dl>
 
               <section className="p-archive__list">
                 <div id="list-inner" className="p-archive__list--head">
-                  {currentRoute ? <ListPostBlogCategory route={this.props.route} /> : <ListPostBlog route={this.props.route} />}
+                  {currentRoute ? <ListPostBlogCategory router={this.props.router} /> : <ListPostBlog route={this.props.router} />}
                 </div>
               </section>
 
@@ -44,7 +48,7 @@ class ContentAreaJpArchive extends Component {
         </div>
 
         <div>
-          <PopularPostArea route={this.props.route} />
+          <PopularPostArea {...this.props} />
         </div>
       </section>
     )

@@ -13,9 +13,10 @@ import PostImage from '../../../static/PostImage'
 
 class PostJp extends Component {
   render() {
-    // console.log('start postjp')
-    // console.log(this.props);
-    // console.log('end postjp')
+
+    console.log('記事詳細org start')
+    console.log(this.props)
+    console.log('記事詳細org end')
 
     return (
       <section className="l-content-area">
@@ -31,8 +32,7 @@ class PostJp extends Component {
           <SocialBox {...this.props} />
         </div>
 
-        <PopularpostArea />
-        <RankingPostArea />
+        <PopularpostArea {...this.props} />
       </section>
     );
   }

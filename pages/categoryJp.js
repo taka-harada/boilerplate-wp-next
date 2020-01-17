@@ -30,10 +30,13 @@ class Archive extends Component {
   }
 
   render() {
+    console.log('pagesカテゴリアーカイブ start')
+    console.log(this.props)
+    console.log('pagesカテゴリアーカイブ end')
 
     return (
       <Layout title='JP CATEGORY アーカイブ'>
-        <ContentAreaJpArchive route={this.props.router} />
+        <ContentAreaJpArchive {...this.props} />
         <Link href="./index">
           <button>Go to TOP &gt;&gt;</button>
         </Link>

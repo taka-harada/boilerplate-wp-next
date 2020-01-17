@@ -5,7 +5,7 @@ import "./PostTagbox.scss";
 
 class PostTagbox extends Component {
   render() {
-    const tags = this.props.post.common_tag.map(tag => (
+    const tags = this.props.post.commontag.map(tag => (
       <li key={tag.term_id}>
         <Link
           as={`/tag/${tag.slug}`}

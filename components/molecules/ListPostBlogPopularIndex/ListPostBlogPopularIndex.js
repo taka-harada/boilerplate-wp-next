@@ -18,7 +18,13 @@ class ListPostBlogPopularIndex extends Component {
   fetchData() {
     if (this.isLoading === false) {
 
-      return category(this.props.route.asPath, 1).then(res => res.json())
+      //let categoryName = this.props.post.jpcategory[0].slug
+
+      let categoryPath = this.props.router.asPath
+      let pathArr = categoryPath.split('/')
+      let categoryName = pathArr[1]
+
+      return category(categoryName, 1).then(res => res.json())
         .then(data => {
           this.setState({
             data: data,
@@ -36,7 +42,7 @@ class ListPostBlogPopularIndex extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.route.asPath !== prevProps.route.asPath) {
+    if (this.props.router.asPath !== prevProps.router.asPath) {
 
       // 2回目以降のfetch
       this.fetchData();
@@ -48,7 +54,7 @@ class ListPostBlogPopularIndex extends Component {
   renderPost() {
     const postMaxNum = 5;
     const postNum = this.state.data.total
-    const arrPost = this.state.data.posts.slice(0, postMaxNum);
+    const arrPost = this.state.data.slice(0, postMaxNum);
 
     const popularPost = arrPost.map((item, index) => {
       return (
@@ -66,6 +72,10 @@ class ListPostBlogPopularIndex extends Component {
   }
 
   render() {
+
+    console.log('ブログポピュラーインデックス start')
+    console.log(this.props)
+    console.log(this.state)
 
     if (this.state.isLoaded) {
       return this.renderPost();

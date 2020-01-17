@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Error from 'next/error'
-//import Router, { withRouter } from 'next/router'
-import { withRouter } from 'next/router'
+import Router, { withRouter } from 'next/router'
+//import { withRouter } from 'next/router'
 import { blogPost } from '../Api/Api'
 
 import Layout from '../components/Layout'
@@ -16,19 +16,19 @@ class Post extends Component {
     super(props);
   }
 
-  static async getInitialProps({ query }) {
+  static async getInitialProps({ query, pathname, asPath }) {
     const { id } = query
     const res = await blogPost(id)
     const post = await res.json()
     return {
-      post
+      post, query, pathname, asPath
     }
   }
 
   render() {
-    // console.log('start post')
-    // console.log(this.props)
-    // console.log('end')
+    console.log('記事詳細pages start')
+    console.log(this.props)
+    console.log('記事詳細pages end')
 
     return (
       <Layout title='JP BLOG Single'>

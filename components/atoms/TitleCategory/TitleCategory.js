@@ -8,7 +8,7 @@ class TitleCategory extends Component {
     console.log(this.props);
     console.log('カテゴリタイトル end')
 
-    const currentRoute = this.props.route.asPath
+    const currentRoute = this.props.router.asPath
 
     switch (currentRoute) {
       case '/jp/ancient-city/':
