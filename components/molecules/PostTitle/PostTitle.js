@@ -6,9 +6,9 @@ import "./PostTitle.scss";
 
 class PostTitle extends Component {
   render() {
-    // console.log("start PostTitle");
-    // console.log(this.props);
-    // console.log("end PostTitle");
+    console.log("start PostTitle");
+    console.log(this.props);
+    console.log("end PostTitle");
 
     return (
       <header className="p-article__header">
@@ -29,16 +29,16 @@ class PostTitle extends Component {
             <div className="img-box">
               <img src={this.props.post.featured_image} />
             </div>
-            {this.props.post.jp_category && (
+            {this.props.post.jpcategory && (
               <div className="badge-category badge-ancientcity">
                 <Link
-                  as={`/jp/${this.props.post.jp_category[0].slug}`}
+                  as={`/jp/${this.props.post.jpcategory[0].slug}`}
                   href={{
                     pathname: "/categoryJp",
-                    query: { slug: this.props.post.jp_category[0].slug }
+                    query: { slug: this.props.post.jpcategory[0].slug }
                   }}
                 >
-                  <a>{this.props.post.jp_category[0].name}</a>
+                  <a>{this.props.post.jpcategory[0].name}</a>
                 </Link>
               </div>
             )}

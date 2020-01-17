@@ -56,7 +56,7 @@ class Card extends Component {
           {this.props.jpcategory && (
             <div className="badge-category badge-ancientcity">
               <Link
-                as={`/jp/tag/${this.props.slug}`}
+                as={`/jp/tag/${this.props.jpcategory[0].slug}`}
                 href={{
                   pathname: "/categoryJp",
                   query: { slug: this.props.slug }
@@ -134,6 +134,11 @@ class Card extends Component {
   }
 
   render() {
+
+    console.log('カード start')
+    console.log(this.props)
+    console.log(this.state)
+    console.log('カード end')
     const currentRoute = this.props.route;
 
     switch (currentRoute) {
